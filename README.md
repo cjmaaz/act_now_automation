@@ -20,7 +20,8 @@ pip install selenium
 ```
 
 - Install the [Chrome Webdriver](https://chromedriver.chromium.org/downloads) based on your Browser version.
-- Open the file and enter your email and password.
+- Open the file and provide the Path of your ChromeDriver.
+- Also provide the Email and Password.
 - Run the python file:
 ```sh
 python covid19.py
