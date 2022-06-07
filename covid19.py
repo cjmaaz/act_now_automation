@@ -1,7 +1,11 @@
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
+from datetime import date
+from PIL import Image
 import time
 
+today = date.today()
+currDateFormatted = today.strftime("%d-%m-%Y")
 PATH = 'C:\webdrivers\chromedriver.exe'
 driver = Chrome(PATH)
 
@@ -12,8 +16,8 @@ currentWindow = driver.current_window_handle
 time.sleep(10)
 print('After Sleep')
 
-emailId = '' #your email id
-pwd = '' #your password
+emailId = 'EMAIL_ID' #your email id
+pwd = 'PWD' #your password
 
 selectedIframe = driver.find_element(By.XPATH, '//iframe')
 idforIframe = selectedIframe.get_attribute("id")
@@ -53,8 +57,9 @@ driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div[2]/div/div/artic
 driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div[2]/div/div/article/table/tbody/tr[3]/td[4]/div/lightning-input/div/span/label/span[1]').click()
 driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div[2]/div/div/article/table/tbody/tr[4]/td[4]/div/lightning-input/div/span/label/span[1]').click()
 driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div[2]/div/div/article/div[3]/button').click()
-time.sleep(2)
-driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/div[2]/div/div/section/div/footer/button[2]').click()
-time.sleep(5)
+time.sleep(8)
+driver.save_screenshot('act_'+currDateFormatted+'.png')
+screenshot = Image.open('act_'+currDateFormatted+'.png')
+screenshot.show()
 driver.quit()
 print('Logged')
