@@ -7,6 +7,7 @@
 
 Act Now is a SF tool which takes daily medical survey. This tool helps you to automate the process using Selenium 4.
 
+- Takes screenshot with current date.
 - Added delay for slow connection.
 - Saving Page Source in a file.
 - Even works of Dynamic iFrame Id.
@@ -17,6 +18,10 @@ This tool requires [Python](https://www.python.org/) to run.
 - Install the Selenium 4:
 ```sh
 pip install selenium
+```
+- Install the Pillow:
+```sh
+pip install Pillow
 ```
 
 - Install the [Chrome Webdriver](https://chromedriver.chromium.org/downloads) based on your Browser version.
